@@ -466,6 +466,8 @@ a.card--tool:hover { border-color: var(--brand); }
 .article-source__label { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted-2); font-weight: 700; margin-bottom: 5px; }
 .article-source__title { font-size: 14px; font-weight: 600; color: var(--navy); }
 .article-source__meta { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+.article-source__open { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; font-weight: 600; white-space: nowrap; }
+.article-source__open svg { width: 12px; height: 12px; }
 .article-source__icon { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 7px; display: grid; place-items: center; color: var(--brand-deep); flex: none; }
 .article-source__icon svg { width: 18px; height: 18px; }
 

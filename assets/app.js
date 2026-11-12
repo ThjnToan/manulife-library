@@ -69,6 +69,13 @@
   function articleById(id) { return LIB.articles.filter(function (a) { return a.id === id; })[0]; }
   function toolById(id) { return TOOLS.filter(function (t) { return t.id === id; })[0]; }
   function docById(id) { return (LIB.docs || []).filter(function (d) { return d.id === id; })[0]; }
+  function docForMemo(memo) {
+    if (!memo) return null;
+    var s = (LIB.sources || []).filter(function (x) { return x.memo === memo; })[0];
+    if (!s || !s.doc) return null;
+    var d = docById(s.doc);
+    return d ? { doc: d, page: s.docPage || 1 } : null;
+  }
   function pad(n) { return String(n).padStart(2, "0"); }
 
   var LS = {
@@ -498,6 +505,8 @@
     var toc = a.headings.map(function (h) {
       return '<a href="#' + h.id + '" data-toc="' + h.id + '" class="' + (h.level === 3 ? "toc--3" : "") + '">' + esc(h.text) + '</a>';
     }).join("");
+    var sd = docForMemo(a.source.memo);
+    var sourceDocLink = sd ? '<a class="article-source__open" href="#/doc/' + sd.doc.id + '?page=' + sd.page + '">Mở tài liệu gốc' + icon("arrow") + '</a>' : "";
 
     return '<nav class="crumbs" style="display:none"></nav>' +
       '<header class="article-head">' +
@@ -517,7 +526,7 @@
           '<div class="article-source"><div class="article-source__icon">' + icon("source") + '</div><div>' +
             '<div class="article-source__label">Nguồn gốc</div>' +
             '<div class="article-source__title">' + esc(a.source.label) + '</div>' +
-            '<div class="article-source__meta">Slide ' + esc(a.source.slides) + (a.source.memo ? ' · ' + esc(a.source.memo) : '') + '. Nội dung đã tóm tắt, không thay thế văn bản chính sách.</div>' +
+            '<div class="article-source__meta">Slide ' + esc(a.source.slides) + (a.source.memo ? ' · ' + esc(a.source.memo) : '') + '. Nội dung đã tóm tắt, không thay thế văn bản chính sách.' + sourceDocLink + '</div>' +
           '</div></div>' +
           '<div class="article-nav">' +
             (prev ? '<a href="#/article/' + prev.id + '"><span>Bài trước</span><b>' + esc(prev.title) + '</b></a>' : '<span></span>') +
