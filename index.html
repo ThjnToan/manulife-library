@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thư viện tri thức Manulife · VP Đà Nẵng</title>
+<meta name="theme-color" content="#00A758">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Thư viện tri thức Manulife VP Đà Nẵng: chính sách FA, UM, PSM+, chỉ số kinh doanh và công cụ tính thù lao.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Manulife Library">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+<div class="app">
+  <aside class="rail" id="rail" aria-label="Điều hướng chính">
+    <div class="rail__brand">
+      <a class="brand" href="#/" aria-label="Trang chủ thư viện">
+        <img src="assets/logo-color.svg" alt="Manulife" class="brand__logo">
+        <span class="brand__sub">Knowledge Hub</span>
+      </a>
+      <span class="edition">2026</span>
+    </div>
+
+    <nav class="rail__nav" id="railNav">
+      <a class="navlink" href="#/" data-nav="home"><span class="navlink__ico" data-ico="home"></span>Trang chủ</a>
+      <a class="navlink" href="#/library" data-nav="library"><span class="navlink__ico" data-ico="library"></span>Thư viện</a>
+      <a class="navlink" href="#/tools" data-nav="tools"><span class="navlink__ico" data-ico="calc"></span>Công cụ</a>
+      <a class="navlink" href="#/paths" data-nav="paths"><span class="navlink__ico" data-ico="path"></span>Lộ trình</a>
+      <a class="navlink" href="#/glossary" data-nav="glossary"><span class="navlink__ico" data-ico="book"></span>Tra cứu</a>
+      <a class="navlink" href="#/sources" data-nav="sources"><span class="navlink__ico" data-ico="source"></span>Nguồn tài liệu</a>
+    </nav>
+
+    <div class="rail__section">
+      <p class="rail__label">Chủ đề</p>
+      <nav class="rail__cats" id="railCats" aria-label="Chủ đề"></nav>
+    </div>
+
+    <div class="rail__foot">
+      <div class="rail__note">
+        <span class="dot dot--live"></span>
+        <span>Cập nhật <strong id="railUpdated">11/11/2026</strong></span>
+      </div>
+      <p>Ấn bản chính sách 04/2026. Luôn đối chiếu bản gốc khi áp dụng chính thức.</p>
+    </div>
+  </aside>
+
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar__left">
+        <button class="iconbtn only-mobile" id="menuBtn" aria-label="Mở menu" aria-expanded="false"><span data-ico="menu"></span></button>
+        <a class="mobile-brand" href="#/" aria-label="Trang chủ"><img src="assets/logo-color.svg" alt="Manulife"></a>
+        <nav class="crumbs" id="crumbs" aria-label="Bạn đang ở"></nav>
+      </div>
+      <div class="topbar__right">
+        <button class="searchbtn" id="searchBtn" aria-label="Tìm kiếm toàn thư viện">
+          <span data-ico="search"></span>
+          <span class="searchbtn__text">Tìm bài, thuật ngữ, công cụ</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <button class="iconbtn" id="bookmarkBtn" aria-label="Bài đã đánh dấu" title="Bài đã đánh dấu"><span data-ico="bookmark"></span><span class="iconbtn__badge" id="bmBadge" hidden>0</span></button>
+      </div>
+      <div class="progress" id="progress" hidden></div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1"></main>
+
+    <footer class="site-foot">
+      <div class="site-foot__brand">
+        <img src="assets/logo-color.svg" alt="Manulife" class="footlogo">
+        <span>Thư viện tri thức nội bộ · VP Đà Nẵng</span>
+      </div>
+      <div class="site-foot__meta">
+        <span>Ấn bản <strong>2026</strong></span>
+        <span class="sep"></span>
+        <span id="footCount">37 bài viết</span>
+        <span class="sep"></span>
+        <a href="#/sources">Nguồn và cách cập nhật</a>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<nav class="tabbar" aria-label="Điều hướng nhanh">
+  <a href="#/" data-nav="home"><span data-ico="home"></span><span>Trang chủ</span></a>
+  <a href="#/library" data-nav="library"><span data-ico="library"></span><span>Thư viện</span></a>
+  <a href="#/tools" data-nav="tools"><span data-ico="calc"></span><span>Công cụ</span></a>
+  <a href="#/glossary" data-nav="glossary"><span data-ico="book"></span><span>Tra cứu</span></a>
+  <button id="tabSearch" aria-label="Tìm kiếm"><span data-ico="search"></span><span>Tìm</span></button>
+</nav>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<div class="palette" id="palette" hidden>
+  <div class="palette__panel" role="dialog" aria-modal="true" aria-label="Tìm kiếm">
+    <div class="palette__inputwrap">
+      <span data-ico="search"></span>
+      <input id="paletteInput" type="text" autocomplete="off" spellcheck="false" placeholder="Nhập tên khoản thưởng, chỉ số, chức danh..." aria-label="Từ khóa tìm kiếm">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="palette__body" id="paletteBody"></div>
+    <div class="palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> di chuyển</span>
+      <span><kbd>↵</kbd> mở</span>
+      <span><kbd>Esc</kbd> đóng</span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="assets/calc.js"></script>
+<script src="assets/tools.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

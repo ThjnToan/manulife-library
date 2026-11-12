@@ -1,0 +1,16 @@
+{
+  "name": "Thư viện tri thức Manulife",
+  "short_name": "Manulife Library",
+  "description": "Chính sách, chỉ số và máy tính thù lao cho đội ngũ Manulife VP Đà Nẵng.",
+  "lang": "vi",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F6F7F4",
+  "theme_color": "#00A758",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
