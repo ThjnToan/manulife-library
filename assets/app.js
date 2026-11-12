@@ -267,7 +267,7 @@
     var page = parseInt(params && params.get("page"), 10);
     if (!(page >= 1 && page <= d.pages)) page = 1;
     var file = d.file;
-    var note = d.encrypted ? '<p class="doc-note">' + icon("warn") + ' Tài liệu gốc được mã hóa bằng mật khẩu nội bộ. Khi trình duyệt hỏi mật khẩu, nhập mật khẩu đội ngũ. Nếu chưa có, liên hệ Toàn.</p>' : "";
+    var note = d.encrypted ? '<p class="doc-note">' + icon("warn") + ' Tài liệu gốc được mã hóa bằng mật khẩu nội bộ. Khi trình duyệt hỏi mật khẩu, nhập mật khẩu đội ngũ. Nếu khung xem không hiện, bấm Mở PDF ở trên. Nếu chưa có mật khẩu, liên hệ Toàn.</p>' : "";
     return '<div class="page-head doc-head"><div>' +
       '<p class="overline">Tài liệu gốc · ' + esc(d.kind || "PDF") + '</p>' +
       '<h1 class="display">' + esc(d.title) + '</h1>' +
